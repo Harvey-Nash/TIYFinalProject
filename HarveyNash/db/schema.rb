@@ -36,10 +36,8 @@ ActiveRecord::Schema.define(version: 20150326174251) do
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id"
     t.boolean  "active"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "name"
-    t.text     "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "start_time"
   end
 

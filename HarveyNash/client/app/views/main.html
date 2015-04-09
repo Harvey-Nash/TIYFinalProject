@@ -14,7 +14,7 @@
           <nav class="mainNav">
             <a href="#/browse">BROWSE LIBRARY</a>
             <span class="right">
-              <a href="#/login" id="toggle-login" data-toggle="modal" data-target="#myModal" ng-hide="auth.isAuthenticated()">LOGIN</a>
+              <a href="#/login" id="toggle-login" data-toggle="modal" data-target="#loginModal" ng-hide="auth.isAuthenticated()">LOGIN</a>
               <a href="#/register" data-toggle="modal" data-target="#registerModal" ng-hide="auth.isAuthenticated()">REGISTER</a>
             </span>
           </nav>
@@ -24,12 +24,12 @@
   </nav> <!-- nav close -->
 
   <!-- LOGIN FORM -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="LoginController as loginCtrl">
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" ng-controller="LoginController as loginCtrl">
   <div class="modal-dialog" id="mainLog">
     <div class="modal-content" id="loginContent">
       <div class="loginHeader modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title loginTitle" id="myModalLabel">Login</h3>
+        <h3 class="modal-title loginTitle" id="loginModalLabel">Login</h3>
       </div>
       <div class="modal-body loginBody">
         <form class="loginForm" name="loginForm" novalidate>
@@ -48,17 +48,17 @@
 </div>
 
 <!-- REGISTER FORM -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="AuthController as authCtrl">
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true" ng-controller="AuthController as authCtrl">
   <div class="modal-dialog" id="registerLog">
     <div class="modal-content" id="registerContent">
       <div class="loginHeader modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title loginTitle" id="myModalLabel">Register</h3>
+        <h3 class="modal-title loginTitle" id="registerModalLabel">Register</h3>
       </div>
       <div class="modal-body loginBody">
         <form class="loginForm" name="userForm" novalidate>
           <!-- NAME -->
-					<div class="inputs" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><input type="text" ng-model="authCtrl.user.name" placeholder="Name" name-"name" class="textInput" required>
+					<div class="inputs" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><input type="text" ng-model="authCtrl.user.name" placeholder="Name" name="name" class="textInput" required>
           <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p></div>
 
           <!-- EMAIL -->
@@ -77,7 +77,7 @@
       <div class="modal-footer loginFooter">
         <button type="submit" ng-disabled="userForm.$invalid" ng-click="authCtrl.register(userForm.$valid)" class="btn submitBtn">Complete Registration</button>
         <div class="mainNav">
-          <a href="#/login" data-toggle="modal" data-target="#myModal" data-dismiss="modal">Already have an account?</a>
+          <a href="#/login" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Already have an account?</a>
         </div>
       </div>
     </div>

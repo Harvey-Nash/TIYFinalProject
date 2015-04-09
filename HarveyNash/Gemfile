@@ -26,6 +26,9 @@ gem 'bcrypt', '~> 3.1.7'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+# needs compass gem
+gem 'compass'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -1,0 +1,31 @@
+{
+  "name": "opentok-editor",
+  "version": "0.1.1",
+  "authors": [
+    "Adam Ullman <adam@tokbox.com>"
+  ],
+  "description": "A real time collaborative editor for OpenTok using CodeMirror and ot.js",
+  "keywords": [
+    "opentok",
+    "ot",
+    "CodeMirror",
+    "operational-transform"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/aullman/opentok-editor",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "CodeMirror": "git://github.com/marijnh/CodeMirror.git#~4.3.0",
+    "opentok-angular": "~0.2.3"
+  },
+  "devDependencies": {
+    "ot": "~0.0.14",
+    "angular-mocks": "~1.2.23"
+  }
+}

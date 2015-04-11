@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>OpenTok-Editor Demo</title>
+        <link rel="stylesheet" href="bower_components/CodeMirror/lib/codemirror.css" type="text/css" media="screen" title="no title" charset="utf-8">        
+        <script src="bower_components/CodeMirror/lib/codemirror.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/CodeMirror/mode/javascript/javascript.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/CodeMirror/mode/markdown/markdown.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://static.opentok.com/webrtc/v2.2/js/opentok.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/opentok-angular/opentok-angular.js" type="text/javascript" charset="utf-8"></script>
+        <script src="opentok-editor.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="opentok-editor.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <style type="text/css" media="screen">
+            ot-editor {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+        <script type="text/javascript">
+            angular.module('demo', ['opentok', 'opentok-editor'])
+            .controller('DemoCtrl', ['$scope', 'OTSession', function ($scope, OTSession) {
+                OTSession.init('YOUR_API_KEY', 'YOUR_SESSION_ID', 'YOUR_TOKEN');
+            }]);
+        </script>
+        <body ng-controller="DemoCtrl">
+            <ot-editor modes="[{name: 'Javascript', value: 'javascript'}, {name: 'Markdown', value: 'markdown'}]" value="// Write code here" mode="javascript"></ot-editor>
+        </body>
+    </head>
+</html>

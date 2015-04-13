@@ -8,7 +8,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 
 
-gem 'sqlite3'
+gem 'pg'
 
 # we need to get some secret API keys in a development environment
 gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-now'
@@ -28,6 +28,9 @@ gem 'jbuilder'
 
 # needs compass gem
 gem 'compass'
+
+# needs puma for serving
+gem 'puma', :group => :production
 
 # Use unicorn as the app server
 # gem 'unicorn'

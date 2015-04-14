@@ -1,6 +1,8 @@
 // Generated on 2015-03-11 using generator-angular 0.11.1
 'use strict';
 
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -16,6 +18,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.loadNpmTasks('grunt-html');
+  grunt.loadNpmTasks('grunt-connect-proxy');
 
   // Configurable paths for the application
   var appConfig = {
@@ -73,6 +76,15 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [
+        {
+          context: '/api/v1',
+          host: 'localhost',
+          port: 3000,
+          https: false,
+          changeOrigin: false
+        }
+      ],
       livereload: {
         options: {
           open: true,

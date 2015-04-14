@@ -7,6 +7,15 @@ end
 # Auth Solution borrowed from:
 # http://adamalbrecht.com/2014/12/04/add-json-web-token-authentication-to-your-angular-rails-app/
 class ApplicationController < ActionController::API
+  # getting around CORS issues
+  before_filter :cors_set_access_control_headers
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = '*, X-Requested-With, X-Prototype-Version, X-CSRF-Token, Content-Type'
+    headers['Access-Control-Max-Age'] = "1728000"
+  end
+  
   # include implicit render so we can use jbuilder
   include ActionController::ImplicitRender
   

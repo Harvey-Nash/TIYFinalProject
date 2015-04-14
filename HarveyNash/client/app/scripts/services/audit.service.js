@@ -3,7 +3,7 @@
 
   angular.module('app')
     .factory('RoomService', function($http) {
-      var url = 'http://localhost:3000/api/v1/sessions';
+      var url = '/api/v1/sessions';
 
       var centerStageAdd = function( roomId, userId ) {
         console.log('audit.service#centerStageAdd:' + roomId + ',' + userId);
@@ -53,7 +53,7 @@
       };
 
       var deleteQuestion = function(questionId) {
-        return $http.delete('http://localhost:3000/api/v1/questions/' + questionId);
+        return $http.delete('/api/v1/questions/' + questionId);
       };
 
       // var addNewMessage = function (userId, message) {

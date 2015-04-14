@@ -3,8 +3,8 @@
 
   angular.module('app')
     .factory('UserService', function($http, LocalService, $rootScope) {
-      var url = "http://localhost:3000/api/v1/profile";
-      var eventUrl = 'http://localhost:3000/api/v1/sessions'
+      var url = "/api/v1/profile";
+      var eventUrl = '/api/v1/sessions'
       // var events = [
       //   { 
       //     name: 'Demo Day Fun Time',

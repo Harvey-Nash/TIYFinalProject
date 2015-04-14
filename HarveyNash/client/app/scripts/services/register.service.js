@@ -4,7 +4,7 @@
   angular.module('app')
     .factory('AuthService', function ($http, LocalService) {
       function checkTokenStatus(token)  {
-        $http.get('http://localhost:3000/api/v1/auth/token_status?token=' + token);
+        $http.get('/api/v1/auth/token_status?token=' + token);
       }
 
       var token = LocalService.get('auth_token');
@@ -26,7 +26,7 @@
           return LocalService.get('auth_token');
         },
         login: function(credentials) {
-          var login = $http.post('http://localhost:3000/api/v1/auth', credentials);
+          var login = $http.post('/api/v1/auth', credentials);
           login.success(function(result) {
             LocalService.set('auth_token', JSON.stringify(result));
           });
@@ -37,7 +37,7 @@
         },
         register: function(formData) {
           LocalService.unset('auth_token');
-          var register = $http.post('http://localhost:3000/api/v1/register', formData);
+          var register = $http.post('/api/v1/register', formData);
           register.success(function(result) {
             LocalService.set('auth_token', JSON.stringify(result));
           });

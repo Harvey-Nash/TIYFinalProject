@@ -483,6 +483,8 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'compass:dist',
+    'imagemin',
     'autoprefixer',
     'concat',
     'ngAnnotate',

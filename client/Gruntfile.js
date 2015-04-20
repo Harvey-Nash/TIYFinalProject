@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-connect-proxy');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   // Configurable paths for the application
   var appConfig = {
@@ -500,6 +501,5 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('heroku:production', 'clean mincss uglify');
   grunt.registerTask('heroku:production', 'build')
 };
